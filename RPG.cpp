@@ -25,7 +25,7 @@ int getUserInput(const char* prompt, int min, int max) {
         std::cout << prompt;
         std::cin >> choice;
     } while (choice < min || choice > max);
-    return choice;
+    return choice-1;
 };
 
 int main() {
@@ -40,7 +40,7 @@ int main() {
    // Get player's race
     std::cout << "Choose a race:" << std::endl;
     for (int i = Orc; i <= Karen; ++i) {
-        std::cout << i << ". " << player.enumToString(static_cast<Races>(i)) << std::endl;
+        std::cout << i+1 << ". " << player.enumToString(static_cast<Races>(i)) << std::endl;
     }
     int raceChoice = getUserInput("Enter the number corresponding to the race: ", Orc, Karen);
     player.setRace(static_cast<Races>(raceChoice));
@@ -48,7 +48,7 @@ int main() {
     // Get player's class
     std::cout << "Choose a class:" << std::endl;
     for (int i = Thief; i <= Bard; ++i) {
-        std::cout << i << ". " << player.enumToStringC(static_cast<Classes>(i)) << std::endl;
+        std::cout << i+1 << ". " << player.enumToStringC(static_cast<Classes>(i)) << std::endl;
     }
     int classChoice = getUserInput("Enter the number corresponding to the class: ", Thief, Bard);
     player.setClass(static_cast<Classes>(classChoice));
