@@ -2,6 +2,8 @@
 #include <ctime>
 #include <cmath>
 #include "Player.hpp"
+#include <windows.h>
+
 
 class World {
 private:
@@ -37,7 +39,6 @@ int main() {
     std::cin >> temp;
     player.setAge(temp);
 
-   // Get player's race
     std::cout << "Choose a race:" << std::endl;
     for (int i = Orc; i <= Karen; ++i) {
         std::cout << i+1 << ". " << player.enumToString(static_cast<Races>(i)) << std::endl;
@@ -45,7 +46,6 @@ int main() {
     int raceChoice = getUserInput("Enter the number corresponding to the race: ", Orc, Karen);
     player.setRace(static_cast<Races>(raceChoice));
 
-    // Get player's class
     std::cout << "Choose a class:" << std::endl;
     for (int i = Thief; i <= Bard; ++i) {
         std::cout << i+1 << ". " << player.enumToStringC(static_cast<Classes>(i)) << std::endl;
@@ -53,27 +53,30 @@ int main() {
     int classChoice = getUserInput("Enter the number corresponding to the class: ", Thief, Bard);
     player.setClass(static_cast<Classes>(classChoice));
 
+    player.display();
 
-    // Display player information
-    std::cout << "----------- Player Information: -----------" << std::endl;
-    std::cout << "Name: " << player.name << std::endl;
-    std::cout << "Age: " << player.getAge() << std::endl;
-    std::cout << "Race: " << player.getRace() << std::endl;
-    std::cout << "Class: " << player.getClass() << std::endl;
-    std::cout << "Level: " << player.getLevel() << std::endl;
-    std::cout << "-------------- Player Stats: --------------" << std::endl;
-    std::cout << "MAX Health: " << player.getHealthMax() << std::endl;
-    std::cout << "MAX Stamina: " << player.getStaminaMax() << std::endl;
-    std::cout << "MAX Mana: " << player.getManaMax() << std::endl;
-    std::cout << "Physical Defense: " << player.getDefensePhy() << std::endl;
-    std::cout << "Magical Defense: " << player.getDefenseMag() << std::endl;
-    std::cout << "Resistance: " << player.getResistance() << std::endl;
-    std::cout << "Strenght: " << player.getStrength() << std::endl;
-    std::cout << "Dexterity: " << player.getDexterity() << std::endl;
-    std::cout << "Magic: " << player.getMagic() << std::endl;
-    std::cout << "Faith: " << player.getFaith() << std::endl;
-    std::cout << "Intelligence: " << player.getIntelligence() << std::endl;
-    std::cout << "-------------------------------------------" << std::endl;
+
+    Sleep(5000);
+    std::cout << "                       A long time ago                        " << std::endl;
+    Sleep(2500);
+    std::cout << std::endl;
+    std::cout << "          Lumos, a world ablaze with radiant magic,           " << std::endl; 
+    std::cout << "          found itself on an unavoidable collision            " << std::endl; 
+    std::cout << "                  course with another realm                   " << std::endl;
+    Sleep(5500);
+    std::cout << std::endl;
+    std::cout << "                           Chronos                            " << std::endl;
+    std::cout << std::endl;
+    Sleep(2000);
+    std::cout << "          A dark world, where only the ebb and flow           " << std::endl;
+    std::cout << "           of time shaped every facet of existance.           " << std::endl;
+    Sleep(3500);
+    std::cout << std::endl;
+    std::cout << "             The impending convergence threatened             " << std::endl; 
+    std::cout << "         the very fabric of existence for both worlds,        " << std::endl; 
+    std::cout << "          casting a shadow of impending doom across           " << std::endl; 
+    std::cout << "                    the cosmic tapestry.                      " << std::endl;
+    Sleep(4000);
 
     return 0;
 }

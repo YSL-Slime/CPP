@@ -446,4 +446,26 @@ public:
             default: return "Unknown";
         }
     }
+
+    void display(){
+        std::cout << "----------- Player Information: -----------" << std::endl;
+        std::cout << "Name: " << name << std::endl;
+        std::cout << "Age: " << getAge() << std::endl;
+        std::cout << "Race: " << getRace() << std::endl;
+        std::cout << "Class: " << getClass() << std::endl;
+        std::cout << "Level: " << getLevel() << std::endl;
+        std::cout << "-------------- Player Stats: --------------" << std::endl;
+        std::cout << "MAX Health: " << getHealthMax() << std::endl;
+        std::cout << "MAX Stamina: " << getStaminaMax() << std::endl;
+        std::cout << "MAX Mana: " << getManaMax() << std::endl;
+        std::cout << "Physical Defense: " << getDefensePhy() << std::endl;
+        std::cout << "Magical Defense: " << getDefenseMag() << std::endl;
+        std::cout << "Resistance: " << getResistance() << std::endl;
+        std::cout << "Strenght: " << getStrength() << std::endl;
+        std::cout << "Dexterity: " << getDexterity() << std::endl;
+        std::cout << "Magic: " << getMagic() << std::endl;
+        std::cout << "Faith: " << getFaith() << std::endl;
+        std::cout << "Intelligence: " << getIntelligence() << std::endl;
+        std::cout << "-------------------------------------------" << std::endl;
+    }
 };
