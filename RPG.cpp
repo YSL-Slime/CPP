@@ -24,8 +24,8 @@ int getUserInput(const char* prompt, int min, int max) {
     do {
         std::cout << prompt;
         std::cin >> choice;
-    } while (choice < min || choice > max);
-    return choice-1;
+    } while (choice < min || choice > (max + 1));
+    return choice - 1;
 };
 
 int main() {
@@ -55,11 +55,25 @@ int main() {
 
 
     // Display player information
-    std::cout << "\nPlayer Information:" << std::endl;
+    std::cout << "----------- Player Information: -----------" << std::endl;
     std::cout << "Name: " << player.name << std::endl;
     std::cout << "Age: " << player.getAge() << std::endl;
     std::cout << "Race: " << player.getRace() << std::endl;
     std::cout << "Class: " << player.getClass() << std::endl;
+    std::cout << "Level: " << player.getLevel() << std::endl;
+    std::cout << "-------------- Player Stats: --------------" << std::endl;
+    std::cout << "MAX Health: " << player.getHealthMax() << std::endl;
+    std::cout << "MAX Stamina: " << player.getStaminaMax() << std::endl;
+    std::cout << "MAX Mana: " << player.getManaMax() << std::endl;
+    std::cout << "Physical Defense: " << player.getDefensePhy() << std::endl;
+    std::cout << "Magical Defense: " << player.getDefenseMag() << std::endl;
+    std::cout << "Resistance: " << player.getResistance() << std::endl;
+    std::cout << "Strenght: " << player.getStrength() << std::endl;
+    std::cout << "Dexterity: " << player.getDexterity() << std::endl;
+    std::cout << "Magic: " << player.getMagic() << std::endl;
+    std::cout << "Faith: " << player.getFaith() << std::endl;
+    std::cout << "Intelligence: " << player.getIntelligence() << std::endl;
+    std::cout << "-------------------------------------------" << std::endl;
 
     return 0;
 }

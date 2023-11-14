@@ -9,7 +9,7 @@ private:
     std::string Race;
     std::string Class;
     int age;
-    int level;
+    int level = 1;
     double health;
     double healthMax;
     double mana;
@@ -209,74 +209,80 @@ public:
                 defensePhy += 10.0;
                 defenseMag += 5.0;
                 strength += 15.0;
-                faith += 10.0;
-                magic += 12.0;
-                intelligence += 15.0;
-                dexterity += 18.0;
+                faith += 5.0;
+                magic += 7.0;
+                intelligence += 20.0;
+                dexterity += 23.0;
                 break;
             case Wizard:
                 defensePhy += 5.0;
                 defenseMag += 10.0;
-                strength += 8.0;
+                strength += 2.0;
                 faith += 10.0;
-                magic += 18.0;
+                magic += 28.0;
                 intelligence += 20.0;
-                dexterity += 15.0;
+                dexterity += 10.0;
                 break;
             case Paladin:
                 defensePhy += 15.0;
-                defenseMag += 5.0;
-                strength += 20.0;
+                defenseMag += 10.0;
+                strength += 12.0;
                 faith += 18.0;
                 magic += 8.0;
-                intelligence += 12.0;
-                dexterity += 12.0;
+                intelligence += 8.0;
+                dexterity += 14.0;
                 break;
             case Knight:
                 defensePhy += 18.0;
-                defenseMag += 8.0;
+                defenseMag += 12.0;
                 strength += 20.0;
-                faith += 12.0;
+                faith += 8.0;
                 magic += 8.0;
-                intelligence += 12.0;
+                intelligence += 4.0;
                 dexterity += 15.0;
                 break;
             case Barbarian:
-                defensePhy += 15.0;
+                defensePhy += 20.0;
                 defenseMag += 5.0;
-                strength += 22.0;
-                faith += 8.0;
+                strength += 25.0;
+                faith += 10.0;
                 magic += 5.0;
-                intelligence += 10.0;
-                dexterity += 15.0;
+                intelligence += 2.0;
+                dexterity += 18.0;
                 break;
             case Priest:
                 defensePhy += 5.0;
                 defenseMag += 15.0;
                 strength += 8.0;
                 faith += 20.0;
-                magic += 15.0;
+                magic += 17.0;
                 intelligence += 10.0;
                 dexterity += 12.0;
                 break;
             case Ranger:
-                defensePhy += 8.0;
-                defenseMag += 8.0;
-                strength += 15.0;
-                faith += 10.0;
-                magic += 10.0;
-                intelligence += 18.0;
+                defensePhy += 11.0;
+                defenseMag += 10.0;
+                strength += 18.0;
+                faith += 6.0;
+                magic += 4.0;
+                intelligence += 16.0;
                 dexterity += 20.0;
                 break;
             case Bard:
                 defensePhy += 10.0;
                 defenseMag += 10.0;
                 strength += 12.0;
-                faith += 15.0;
-                magic += 15.0;
+                faith += 10.0;
+                magic += 10.0;
                 intelligence += 15.0;
                 dexterity += 18.0;
                 break;
+        }
+
+        if (getRace() == "Vampire"){
+            int tmp = faith;
+            faith = 0;
+            magic += tmp;
         }
     }
 
