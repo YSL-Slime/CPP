@@ -65,7 +65,7 @@ public:
                 faith = 5.0;
                 magic = 5.0;
                 intelligence = 5.0;
-                dexterity = 10.0;;
+                dexterity = 10.0;
                 break;
             case Reptile:
                 health = 90.0;
@@ -150,17 +150,17 @@ public:
             case Vampire:
                 health = 140.0;
                 healthMax = 140.0;
-                mana = 50.0;
-                manaMax = 50.0;
+                mana = 70.0;
+                manaMax = 70.0;
                 stamina = 95.0;
                 staminaMax = 95.0;
                 defensePhy = 20.0;
                 defenseMag = 15.0;
                 strength = 28.0;
                 resistance = 0.0;
-                faith = 5.0;
+                faith = 0.0;
                 magic = 25.0;
-                intelligence = 20.0;
+                intelligence = 25.0;
                 dexterity = 17.0;
                 break;
             case Werewolf:
@@ -204,6 +204,80 @@ public:
 
     void setClass(Classes newClass) {
         Class = enumToStringC(newClass);
+        switch (newClass) {
+            case Thief:
+                defensePhy += 10.0;
+                defenseMag += 5.0;
+                strength += 15.0;
+                faith += 10.0;
+                magic += 12.0;
+                intelligence += 15.0;
+                dexterity += 18.0;
+                break;
+            case Wizard:
+                defensePhy += 5.0;
+                defenseMag += 10.0;
+                strength += 8.0;
+                faith += 10.0;
+                magic += 18.0;
+                intelligence += 20.0;
+                dexterity += 15.0;
+                break;
+            case Paladin:
+                defensePhy += 15.0;
+                defenseMag += 5.0;
+                strength += 20.0;
+                faith += 18.0;
+                magic += 8.0;
+                intelligence += 12.0;
+                dexterity += 12.0;
+                break;
+            case Knight:
+                defensePhy += 18.0;
+                defenseMag += 8.0;
+                strength += 20.0;
+                faith += 12.0;
+                magic += 8.0;
+                intelligence += 12.0;
+                dexterity += 15.0;
+                break;
+            case Barbarian:
+                defensePhy += 15.0;
+                defenseMag += 5.0;
+                strength += 22.0;
+                faith += 8.0;
+                magic += 5.0;
+                intelligence += 10.0;
+                dexterity += 15.0;
+                break;
+            case Priest:
+                defensePhy += 5.0;
+                defenseMag += 15.0;
+                strength += 8.0;
+                faith += 20.0;
+                magic += 15.0;
+                intelligence += 10.0;
+                dexterity += 12.0;
+                break;
+            case Ranger:
+                defensePhy += 8.0;
+                defenseMag += 8.0;
+                strength += 15.0;
+                faith += 10.0;
+                magic += 10.0;
+                intelligence += 18.0;
+                dexterity += 20.0;
+                break;
+            case Bard:
+                defensePhy += 10.0;
+                defenseMag += 10.0;
+                strength += 12.0;
+                faith += 15.0;
+                magic += 15.0;
+                intelligence += 15.0;
+                dexterity += 18.0;
+                break;
+        }
     }
 
         int getAge() const {
