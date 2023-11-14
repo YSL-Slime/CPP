@@ -1,6 +1,3 @@
-#ifndef PLAYER_H
-#define PLAYER_H
-
 #include <iostream>
 #include <string>
 
@@ -31,15 +28,174 @@ private:
 public:
     std::string name;
 
-    // Getters and Setters
     std::string getRace() const {
         return Race;
     }
 
     void setRace(Races newRace) {
-        // Convert enum to string or handle it as needed
-        // For simplicity, converting it to a string here
         Race = enumToString(newRace);
+        switch (newRace) {
+            case Human:
+                health = 100.0;
+                healthMax = 100.0;
+                mana = 50.0;
+                manaMax = 50.0;
+                stamina = 75.0;
+                staminaMax = 75.0;
+                defensePhy = 10.0;
+                defenseMag = 10.0;
+                strength = 15.0;
+                resistance = 15.0;
+                faith = 20.0;
+                magic = 20.0;
+                intelligence = 20.0;
+                dexterity = 15.0;
+                break;
+            case Orc:
+                health = 100.0;
+                healthMax = 100.0;
+                mana = 50.0;
+                manaMax = 50.0;
+                stamina = 75.0;
+                staminaMax = 75.0;
+                defensePhy = 10.0;
+                defenseMag = 10.0;
+                strength = 15.0;
+                resistance = 15.0;
+                faith = 20.0;
+                magic = 20.0;
+                intelligence = 20.0;
+                dexterity = 15.0;;
+                break;
+            case Reptile:
+                health = 100.0;
+                healthMax = 100.0;
+                mana = 50.0;
+                manaMax = 50.0;
+                stamina = 75.0;
+                staminaMax = 75.0;
+                defensePhy = 10.0;
+                defenseMag = 10.0;
+                strength = 15.0;
+                resistance = 15.0;
+                faith = 20.0;
+                magic = 20.0;
+                intelligence = 20.0;
+                dexterity = 15.0;
+                break;
+            case Fairy:
+                health = 100.0;
+                healthMax = 100.0;
+                mana = 50.0;
+                manaMax = 50.0;
+                stamina = 75.0;
+                staminaMax = 75.0;
+                defensePhy = 10.0;
+                defenseMag = 10.0;
+                strength = 15.0;
+                resistance = 15.0;
+                faith = 20.0;
+                magic = 20.0;
+                intelligence = 20.0;
+                dexterity = 15.0;
+                break;
+            case Elf:
+                health = 100.0;
+                healthMax = 100.0;
+                mana = 50.0;
+                manaMax = 50.0;
+                stamina = 75.0;
+                staminaMax = 75.0;
+                defensePhy = 10.0;
+                defenseMag = 10.0;
+                strength = 15.0;
+                resistance = 15.0;
+                faith = 20.0;
+                magic = 20.0;
+                intelligence = 20.0;
+                dexterity = 15.0;
+                break;
+            case Dwarf:
+                health = 100.0;
+                healthMax = 100.0;
+                mana = 50.0;
+                manaMax = 50.0;
+                stamina = 75.0;
+                staminaMax = 75.0;
+                defensePhy = 10.0;
+                defenseMag = 10.0;
+                strength = 15.0;
+                resistance = 15.0;
+                faith = 20.0;
+                magic = 20.0;
+                intelligence = 20.0;
+                dexterity = 15.0;
+                break;
+            case Goblin:
+                health = 100.0;
+                healthMax = 100.0;
+                mana = 50.0;
+                manaMax = 50.0;
+                stamina = 75.0;
+                staminaMax = 75.0;
+                defensePhy = 10.0;
+                defenseMag = 10.0;
+                strength = 15.0;
+                resistance = 15.0;
+                faith = 20.0;
+                magic = 20.0;
+                intelligence = 20.0;
+                dexterity = 15.0;
+                break;
+            case Vampire:
+                health = 100.0;
+                healthMax = 100.0;
+                mana = 50.0;
+                manaMax = 50.0;
+                stamina = 75.0;
+                staminaMax = 75.0;
+                defensePhy = 10.0;
+                defenseMag = 10.0;
+                strength = 15.0;
+                resistance = 15.0;
+                faith = 20.0;
+                magic = 20.0;
+                intelligence = 20.0;
+                dexterity = 15.0;
+                break;
+            case Werewolf:
+                health = 100.0;
+                healthMax = 100.0;
+                mana = 50.0;
+                manaMax = 50.0;
+                stamina = 75.0;
+                staminaMax = 75.0;
+                defensePhy = 10.0;
+                defenseMag = 10.0;
+                strength = 15.0;
+                resistance = 15.0;
+                faith = 20.0;
+                magic = 20.0;
+                intelligence = 20.0;
+                dexterity = 15.0;
+                break;
+            case Karen:
+                health = 100.0;
+                healthMax = 100.0;
+                mana = 50.0;
+                manaMax = 50.0;
+                stamina = 75.0;
+                staminaMax = 75.0;
+                defensePhy = 10.0;
+                defenseMag = 10.0;
+                strength = 15.0;
+                resistance = 15.0;
+                faith = 20.0;
+                magic = 20.0;
+                intelligence = 20.0;
+                dexterity = 15.0;
+                break;
+        }
     }
 
     std::string getClass() const {
@@ -47,8 +203,6 @@ public:
     }
 
     void setClass(Classes newClass) {
-        // Convert enum to string or handle it as needed
-        // For simplicity, converting it to a string here
         Class = enumToStringC(newClass);
     }
 
@@ -180,8 +334,7 @@ public:
             dexterity = newDexterity;
         }
 
-    private:
-    // Helper function to convert enum to string
+
     template <typename T>
     std::string enumToString(T enumValue) const {
         switch (enumValue) {
@@ -195,8 +348,11 @@ public:
             case Vampire: return "Vampire";
             case Werewolf: return "Werewolf";
             case Karen: return "Karen";
+            default: return "Unknown";
         }
     }
+
+    template <typename T>
     std::string enumToStringC(T enumValue) const {
         switch (enumValue) {
             case Thief: return "Thief";

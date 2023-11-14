@@ -32,15 +32,15 @@ int main() {
     Player player;
     int temp;
     std::cout << "Enter player's name: ";
-    std::cin >> player.name;
+    std::getline(std::cin, player.name);
     std::cout << "Enter player's age: ";
     std::cin >> temp;
     player.setAge(temp);
 
-    // Get player's race
+   // Get player's race
     std::cout << "Choose a race:" << std::endl;
     for (int i = Orc; i <= Karen; ++i) {
-        std::cout << i << ". " << static_cast<Races>(i) << std::endl;
+        std::cout << i << ". " << player.enumToString(static_cast<Races>(i)) << std::endl;
     }
     int raceChoice = getUserInput("Enter the number corresponding to the race: ", Orc, Karen);
     player.setRace(static_cast<Races>(raceChoice));
@@ -48,10 +48,11 @@ int main() {
     // Get player's class
     std::cout << "Choose a class:" << std::endl;
     for (int i = Thief; i <= Bard; ++i) {
-        std::cout << i << ". " << static_cast<Classes>(i) << std::endl;
+        std::cout << i << ". " << player.enumToStringC(static_cast<Classes>(i)) << std::endl;
     }
     int classChoice = getUserInput("Enter the number corresponding to the class: ", Thief, Bard);
     player.setClass(static_cast<Classes>(classChoice));
+
 
     // Display player information
     std::cout << "\nPlayer Information:" << std::endl;
